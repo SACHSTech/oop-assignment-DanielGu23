@@ -6,4 +6,5 @@
 *Insert Class Diagram here*  
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+
+The system that I have chosen to model is an airplane. In an airplane, we have passangers and we also have different types of airplanes that can be used for commericial transport. For this project, I have chosen to make an airplane class which is the most general and abstract. The airplane class has passangers and depending on the type of airplane, it could also have attendents. This is a has-a relationship or aggregation. The different types of airplanes such as the Boeing737 (most common commerical transport airplane) or the helicopter are examples of inheritance, where all the properties that an airplane has can also be found in the Boeing737 or helicopter. Out of all the types of aircraft the only one that is guarenteed to have flight attendents is the Boeing737 because a helicopter is usually to0 small for having flight attendents. This is another example of a has-a relationship, which only applies to the Boeing737. 
