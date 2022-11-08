@@ -51,10 +51,19 @@ public class Passenger {
    /**
     * Returns the purpose of the passenger's flight
     *
-    * @return String strPurpose, the passenger's purpose for flying 
+    * @return String strTripPurpose, the passenger's purpose for flying 
     */	
     public String getPurpose() {
         return this.strTripPurpose;
+    }
+
+   /**
+    * Returns whether the passenger has flight experience
+    *
+    * @return boolean hasFlightExperience, yes or no
+    */	
+    public boolean getExperience() {
+        return this.hasFlightExperience;
     }
 
 }
