@@ -48,4 +48,13 @@ public class Passenger {
         return this.intAge;
     }
 
+   /**
+    * Returns the purpose of the passenger's flight
+    *
+    * @return String strPurpose, the passenger's purpose for flying 
+    */	
+    public String getPurpose() {
+        return this.strTripPurpose;
+    }
+
 }
