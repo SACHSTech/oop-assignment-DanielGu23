@@ -39,4 +39,13 @@ public class Passenger {
         return this.strName;
     }
 
+   /**
+    * Returns the age of the passenger
+    *
+    * @return int intAge, the age of the passenger
+    */	
+    public int getAge() {
+        return this.intAge;
+    }
+
 }
