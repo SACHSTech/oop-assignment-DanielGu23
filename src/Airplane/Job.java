@@ -33,4 +33,13 @@ public class Job {
         this.isNecessary = isNecessary;
 	}
 
+    /**
+    * Returns the name of the job
+    *
+    * @return strName, the name of the job
+    */	
+    public String getName() {
+        return this.strName;
+    }
+
 }
