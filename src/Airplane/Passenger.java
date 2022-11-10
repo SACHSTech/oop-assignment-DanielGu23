@@ -1,5 +1,8 @@
 package Airplane;
 
+import java.io.*;
+import java.util.*;
+
 /**
 * Passenger class file
 * @author: D. Gu
@@ -12,7 +15,7 @@ public class Passenger {
     private String strName;
     private int intAge;
     private boolean hasFlightExperience;
-    private String strTripPurpose;
+    private String[] strJob;
 
    /**
     * Constructor - creates new instance of a passanger object
@@ -20,14 +23,14 @@ public class Passenger {
     * @param strName - the name of the passenger
     * @param intAge - the age of the passenger
     * @param hasFlightExperience - determines if the passenger has former flight experience
-    * @param strTripPurpose - describes the purpose of the passanger flying on the airplane
+    * @param strJob - lists the jobs of the passenger on the flight
     */	
-    public Passenger (String strName, int intAge, boolean hasFlightExperience, String strTripPurpose) {
+    public Passenger (String strName, int intAge, boolean hasFlightExperience, String[] strJob) {
     
         this.strName = strName;
         this.intAge = intAge;
         this.hasFlightExperience = hasFlightExperience;
-        this.strTripPurpose = strTripPurpose;
+        this.strJob = strJob;
 	}
 
    /**
@@ -49,12 +52,12 @@ public class Passenger {
     }
 
    /**
-    * Returns the purpose of the passenger's flight
+    * Returns the job of the passenger on the flight
     *
-    * @return strTripPurpose, the passenger's purpose for flying 
+    * @return strJob, the passenger's occupation
     */	
-    public String getPurpose() {
-        return this.strTripPurpose;
+    public String[] getJob() {
+        return this.strJob;
     }
 
    /**
@@ -69,10 +72,22 @@ public class Passenger {
    /**
     * Setter method that allows the user to modify name
     *
-    * @param strName, the passenger's name
+    * @param strName - the passenger's name
     */	
     public void setName(String strName) {
         this.strName = strName;
-  }
+    }
+
+   /**
+    * Setter method that allows the user to modify a passenger's occupation
+    *
+    * @param strJob, the passenger's occupation
+    */	
+    public void setJob(String[] strJob, int intMax) {
+        String[] strOptions = { "Pilot", "Flight Attendent", "Doctor", "Computer Engineer", "Accountant", "Entrepreneur", "Passenger", "Unemployed"};
+        intMax = strOptions.();
+        strJob = new String[intMax];
+
+    }
 
 }
