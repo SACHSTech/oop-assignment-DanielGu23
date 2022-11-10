@@ -33,7 +33,7 @@ public class Passenger {
    /**
     * Returns the name of the passenger
     *
-    * @return String strName, the name of the passenger
+    * @return strName, the name of the passenger
     */	
     public String getName() {
         return this.strName;
@@ -42,7 +42,7 @@ public class Passenger {
    /**
     * Returns the age of the passenger
     *
-    * @return int intAge, the age of the passenger
+    * @return intAge, the age of the passenger
     */	
     public int getAge() {
         return this.intAge;
@@ -51,7 +51,7 @@ public class Passenger {
    /**
     * Returns the purpose of the passenger's flight
     *
-    * @return String strTripPurpose, the passenger's purpose for flying 
+    * @return strTripPurpose, the passenger's purpose for flying 
     */	
     public String getPurpose() {
         return this.strTripPurpose;
@@ -60,10 +60,19 @@ public class Passenger {
    /**
     * Returns whether the passenger has flight experience
     *
-    * @return boolean hasFlightExperience, yes or no
+    * @return hasFlightExperience, yes or no
     */	
     public boolean getExperience() {
         return this.hasFlightExperience;
     }
+
+   /**
+    * Setter method that allows the user to modify name
+    *
+    * @param strName, the passenger's name
+    */	
+    public void setName(String strName) {
+        this.strName = strName;
+  }
 
 }
