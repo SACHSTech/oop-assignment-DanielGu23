@@ -15,7 +15,7 @@ public class Passenger {
     private String strName;
     private int intAge;
     private boolean hasFlightExperience;
-    private String[] strJob;
+    private ArrayList<Job> strJob;
 
    /**
     * Constructor - creates new instance of a passanger object
@@ -25,7 +25,7 @@ public class Passenger {
     * @param hasFlightExperience - determines if the passenger has former flight experience
     * @param strJob - lists the jobs of the passenger on the flight
     */	
-    public Passenger (String strName, int intAge, boolean hasFlightExperience, String[] strJob) {
+    public Passenger (String strName, int intAge, boolean hasFlightExperience, ArrayList<Job> strJob) {
     
         this.strName = strName;
         this.intAge = intAge;
@@ -56,7 +56,7 @@ public class Passenger {
     *
     * @return strJob, the passenger's occupation
     */	
-    public String[] getJob() {
+    public ArrayList<Job> getJob() {
         return this.strJob;
     }
 
@@ -79,15 +79,14 @@ public class Passenger {
     }
 
    /**
-    * Setter method that allows the user to modify a passenger's occupation
+    * Setter method that allows the user to modify flight experience
     *
-    * @param strJob, the passenger's occupation
+    * @param hasFlightExperience - Yes or No
     */	
-    public void setJob(String[] strJob, int intMax) {
-        String[] strOptions = { "Pilot", "Flight Attendent", "Doctor", "Computer Engineer", "Accountant", "Entrepreneur", "Passenger", "Unemployed"};
-        intMax = strOptions.();
-        strJob = new String[intMax];
-
+    public void setExperience(boolean hasFlightExperience) {
+        this.hasFlightExperience = hasFlightExperience;
     }
+
+    
 
 }
