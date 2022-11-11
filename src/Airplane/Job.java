@@ -51,6 +51,13 @@ public class Job {
         return this.dblSalary;
     }
 
-
+    /**
+    * Returns the purpose of the job
+    *
+    * @return strPurpose, the purpose of the job
+    */	
+    public String getPurpose() {
+        return this.strPurpose;
+    }
 
 }
