@@ -1,4 +1,4 @@
-package Airplane;
+package Aircraft;
 
 import java.io.*;
 import java.util.*;
@@ -31,7 +31,7 @@ public class Passenger {
         this.intAge = intAge;
         this.hasFlightExperience = hasFlightExperience;
         this.Job = Job;
-        Airplane.intPassengers++;
+        Aircraft.intPassengers++;
 	}
 
    /**

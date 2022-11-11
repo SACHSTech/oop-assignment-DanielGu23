@@ -1,4 +1,4 @@
-package Airplane;
+package Aircraft;
 
 /**
 * Airplane class file
@@ -6,7 +6,7 @@ package Airplane;
 * 
 */
 
-public class Airplane {
+public class Aircraft {
     
     // Instance variables
     private double dblDistance;
@@ -23,7 +23,7 @@ public class Airplane {
     * @param strAirlineName - the name of the airline
     * @param intVelocity - the velocity at which the plane will be flying at
     */	
-    public Airplane(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity){
+    public Aircraft(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity){
         this.dblDistance = dblDistance;
         this.strStartLocation = strStartLocation;
         this.strAirlineName = strAirlineName;

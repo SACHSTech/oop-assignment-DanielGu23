@@ -1,6 +1,8 @@
-package Airplane;
+package Aircraft;
 
-public class Helicopter extends Airplane{
+public class Helicopter extends Aircraft{
+
+    // Instance variables
 
     /**
     * Constructor - creates new instance of a helicopter object

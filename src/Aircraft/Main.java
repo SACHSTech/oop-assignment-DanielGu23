@@ -1,4 +1,4 @@
-package Airplane;
+package Aircraft;
 
 import java.io.*;
 import java.util.*;
@@ -41,7 +41,7 @@ public class Main {
         Joe.setJob(Pilot);
 
         System.out.println(Joe.getJob().getName());
-        System.out.println(Airplane.intPassengers);
+        System.out.println(Aircraft.intPassengers);
     }
 
 

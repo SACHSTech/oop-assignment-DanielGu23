@@ -1,4 +1,4 @@
-package Airplane;
+package Aircraft;
 
 import java.io.*;
 import java.util.*;
