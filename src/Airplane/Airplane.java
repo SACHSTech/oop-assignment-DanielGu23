@@ -9,34 +9,34 @@ package Airplane;
 public class Airplane {
     
     // Instance variables
-    private String strDestination;
+    private double dblDistance;
     public static int intPassengers;
     private String strStartLocation;
     private String strAirlineName;
     private int intVelocity;
 
     /**
-    * Constructor - creates new instance of a passanger object
+    * Constructor - creates new instance of an Airplane object
     *
-    * @param strDestination - the name of the destination
+    * @param dblDistance - the distance of the flight
     * @param strStartLocation - the name of the starting location
     * @param strAirlineName - the name of the airline
     * @param intVelocity - the velocity at which the plane will be flying at
     */	
-    public Airplane(String strDestination, String strStartLocation, String strAirlineName, int intVelocity){
-        this.strDestination = strDestination;
+    public Airplane(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity){
+        this.dblDistance = dblDistance;
         this.strStartLocation = strStartLocation;
         this.strAirlineName = strAirlineName;
         this.intVelocity = intVelocity;
     }
 
     /**
-    * Returns the destination
+    * Returns the distance
     *
-    * @return strDestiantion, the destination
+    * @return dblDistance, the distance needed to travel
     */	
-    public String getDestination() {
-        return this.strDestination;
+    public double getDistance() {
+        return this.dblDistance;
     }
 
     /**

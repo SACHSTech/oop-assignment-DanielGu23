@@ -17,14 +17,23 @@ public class Main {
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
         // Creating jobs
-        Job Doctor = new Job("Doctor", 100000.00, "Addresses healthcare needs", false);
-        Job Pilot = new Job("Pilot", 50000.00, "Flies planes", true);
-        Job Attendent = new Job("Attendent", 40000.00, "Serves passengers", true);
+        Job Doctor = new Job("Doctor", 150000.00, "Addresses healthcare needs", false);
+        Job Pilot = new Job("Pilot", 70000.00, "Flies planes", true);
+        Job CoPilot = new Job("Co-Pilot", 65000.00, "Helps fly the plane", true);
+        Job Attendent = new Job("Flight Attendent", 40000.00, "Serves passengers", false);
 
+        // Add these jobs to an array list
         ArrayList<Job> jobsList = new ArrayList<>();
         jobsList.add(Doctor);
         jobsList.add(Pilot);
         jobsList.add(Attendent);
+        jobsList.add(CoPilot);
+
+        // Starting the simulation
+        System.out.println("Welcome to plane flight simulator");
+        System.out.println("Please choose the type of plane you want: (A) Helicopter or (B) Boeing 737" );
+        
+
 
 
         // Creating passengers
@@ -32,6 +41,7 @@ public class Main {
         Joe.setJob(Pilot);
 
         System.out.println(Joe.getJob().getName());
+        System.out.println(Airplane.intPassengers);
     }
 
 
