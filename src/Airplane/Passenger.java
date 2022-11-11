@@ -31,6 +31,7 @@ public class Passenger {
         this.intAge = intAge;
         this.hasFlightExperience = hasFlightExperience;
         this.Job = Job;
+        Airplane.intPassengers++;
 	}
 
    /**
