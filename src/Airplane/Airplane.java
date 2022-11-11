@@ -48,6 +48,14 @@ public class Airplane {
         return this.strStartLocation;
     }
 
-    
+    /**
+    * Returns the airline's name
+    *
+    * @return strAirlineName, the name of the airline
+    */	
+    public String getAirlineName() {
+        return this.strAirlineName;
+    }
+
 
 }
