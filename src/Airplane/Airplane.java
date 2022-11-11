@@ -57,5 +57,14 @@ public class Airplane {
         return this.strAirlineName;
     }
 
+    /**
+    * Returns the velocity of the plane
+    *
+    * @return intVelocity, the velocity of the plane
+    */	
+    public int getVelocity() {
+        return this.intVelocity;
+    }
+
 
 }
