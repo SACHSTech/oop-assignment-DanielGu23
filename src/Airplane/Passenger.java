@@ -15,7 +15,7 @@ public class Passenger {
     private String strName;
     private int intAge;
     private boolean hasFlightExperience;
-    private ArrayList<Job> Jobs;
+    private Job Job;
 
    /**
     * Constructor - creates new instance of a passanger object
@@ -23,14 +23,14 @@ public class Passenger {
     * @param strName - the name of the passenger
     * @param intAge - the age of the passenger
     * @param hasFlightExperience - determines if the passenger has former flight experience
-    * @param strJob - lists the jobs of the passenger on the flight
+    * @param Job - The job of the passenger on the flight (aggregation)
     */	
-    public Passenger (String strName, int intAge, boolean hasFlightExperience, ArrayList<Job> Jobs) {
+    public Passenger (String strName, int intAge, boolean hasFlightExperience, Job Job) {
     
         this.strName = strName;
         this.intAge = intAge;
         this.hasFlightExperience = hasFlightExperience;
-        this.Jobs = Jobs;
+        this.Job = Job;
 	}
 
    /**
@@ -56,8 +56,8 @@ public class Passenger {
     *
     * @return strJob, the passenger's occupation
     */	
-    public ArrayList<Job> getJob() {
-        return this.Jobs;
+    public Job getJob() {
+        return this.Job;
     }
 
    /**
@@ -70,12 +70,12 @@ public class Passenger {
     }
 
    /**
-    * Setter method that allows the user to add a list of jobs
+    * Setter method that allows the user to add a job to a passenger
     *
-    * @param strJob - the list of jobs
+    * @param strJob - the job 
     */	
-    public void setName(ArrayList<Job> Jobs) {
-        this.Jobs = Jobs;
+    public void setJob(Job Job) {
+        this.Job = Job;
     }
 
    /**
@@ -87,41 +87,4 @@ public class Passenger {
         this.hasFlightExperience = hasFlightExperience;
     }
 
-   /**
-    * A method that adds a new occupation
-    *
-    * @param strNewJob - The name of the new job 
-    * @param Jobs - An arraylist that defines the current jobs
-    */	
-    public void addJob(String strNewJob, ArrayList<Job> Jobs) {
-         
-        // Intializing instance variables 
-        this.Jobs = Jobs;
-        boolean isOnList = false;
-
-        // For-each loop that iterates through the Jobs arrayList
-        for (Job currentJob : Jobs) {
-
-            // If the user input equals to an object in the current jobs list
-            if (strNewJob.equals(currentJob.getName())) {
-                // Set isOnList to be true
-                isOnList  = true;
-                break;
-            }
-            else {
-                // Set isOnList to be false
-                isOnList = false;
-            }
-            
-            // If the boolean is true, print that the job is already on the list
-            if (isOnList == true) {
-                System.out.println("This Job is already in your job lists.");
-            }
-
-            // Otherwise, add the job onto the jobs list
-            else if (isOnList == false) {
-                Jobs.add(currentJob);
-            }
-        }       
-    }
 }

@@ -68,5 +68,4 @@ public class Job {
     public boolean getNecessity() {
         return this.isNecessary;
     }
-
 }
