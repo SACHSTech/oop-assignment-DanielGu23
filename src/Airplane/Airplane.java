@@ -39,5 +39,15 @@ public class Airplane {
         return this.strDestination;
     }
 
+    /**
+    * Returns the starting position
+    *
+    * @return strStartLocation, the starting location
+    */	
+    public String getStartLocation() {
+        return this.strStartLocation;
+    }
+
+    
 
 }
