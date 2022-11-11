@@ -50,6 +50,8 @@ public class Main {
     *
     * @param strUserInput - The name of the new job 
     * @param jobsList - An arraylist that defines the current jobs
+    *
+    * @return isOnList, is the occupation on the list of jobs
     */	
     public boolean checkJob(String strUserInput, ArrayList<Job> jobsList){
         // Intializing instance variables 
