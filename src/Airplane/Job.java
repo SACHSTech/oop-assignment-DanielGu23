@@ -42,4 +42,15 @@ public class Job {
         return this.strName;
     }
 
+    /**
+    * Returns the yearly salary of the job
+    *
+    * @return dblSalary, the salary of the job
+    */	
+    public double getSalary() {
+        return this.dblSalary;
+    }
+
+
+
 }
