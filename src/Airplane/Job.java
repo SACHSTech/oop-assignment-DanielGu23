@@ -60,4 +60,13 @@ public class Job {
         return this.strPurpose;
     }
 
+    /**
+    * Returns whether the job is necessary on an airplane
+    *
+    * @return isNecessary, is the job necessary
+    */	
+    public boolean getNecessity() {
+        return this.isNecessary;
+    }
+
 }
