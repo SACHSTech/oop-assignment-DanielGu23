@@ -1,7 +1,7 @@
 package Aircraft;
 
 /**
-* Airplane class file
+* Aircraft class file
 * @author: D. Gu
 * 
 */

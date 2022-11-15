@@ -12,7 +12,11 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-    
+        
+        // Method variables
+        boolean isAnOption = false;
+        String userAddedJob;
+
         // Setting up Buffered reader for user input
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
@@ -21,6 +25,7 @@ public class Main {
         Job Pilot = new Job("Pilot", 70000.00, "Flies planes", true);
         Job CoPilot = new Job("Co-Pilot", 65000.00, "Helps fly the plane", true);
         Job Attendent = new Job("Flight Attendent", 40000.00, "Serves passengers", false);
+        Job Jobless = new Job("Jobless", 0.00, "Does nothing", false);
 
         // Add these jobs to an array list
         ArrayList<Job> jobsList = new ArrayList<>();
@@ -28,13 +33,28 @@ public class Main {
         jobsList.add(Pilot);
         jobsList.add(Attendent);
         jobsList.add(CoPilot);
+        jobsList.add(Jobless);
 
         // Starting the simulation
         System.out.println("Welcome to plane flight simulator");
-        System.out.println("Please choose the type of plane you want: (A) Helicopter or (B) Boeing 737" );
         
-
-
+        // Choose which airplane the user wants
+        while (isAnOption == false){
+            System.out.print("Please choose the type of plane you want: (A) Helicopter or (B) Boeing 737 - " );
+            String strChoice = keyboard.readLine();
+            
+            if (strChoice.equals("a") || strChoice.equals("A")){
+                System.out.println("You have chosen the Helicopter");
+                isAnOption = true;
+            }
+            else if (strChoice.equals("b") || strChoice.equals("B")){
+                System.out.println("You have chosen the Boeing737");
+                isAnOption = true;
+            }
+        }
+        System.out.println();
+        System.out.println("How far do you want to travel: ");
+        
 
         // Creating passengers
         Passenger Joe = new Passenger("Joe", 10, false, Doctor);
