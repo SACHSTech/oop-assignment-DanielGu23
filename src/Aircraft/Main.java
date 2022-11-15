@@ -15,7 +15,6 @@ public class Main {
         
         // Method variables
         boolean isAnOption = false;
-        String userAddedJob;
 
         // Setting up Buffered reader for user input
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
@@ -63,6 +62,7 @@ public class Main {
         System.out.println(Joe.getJob().getName());
         System.out.println(Aircraft.intPassengers);
     }
+
 
 
     /**

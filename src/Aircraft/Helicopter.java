@@ -28,4 +28,13 @@ public class Helicopter extends Aircraft{
     public int getAltitude(){
         return this.intAltitude;
     }
+
+    /**
+    * Setter method that modifies the altitude
+    *
+    * @param intAltitude, the new altitude of the helicopter
+    */	
+    public void setAltitude(int intAltitude) {
+        this.intAltitude = intAltitude;
+    }
 }
