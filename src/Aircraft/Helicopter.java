@@ -2,8 +2,6 @@ package Aircraft;
 
 public class Helicopter extends Aircraft{
 
-    // Instance variables
-
     /**
     * Constructor - creates new instance of a helicopter object
     *
@@ -12,11 +10,9 @@ public class Helicopter extends Aircraft{
     * @param strAirlineName - the name of the airline
     * @param intVelocity - the velocity at which the plane will be flying at
     */	
-    public Helicopter(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity){
+    public Helicopter(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity, double dblBladeLength){
         
         // Super method to take in parameters from Airplane (parent) class
         super(dblDistance, strStartLocation, strAirlineName, intVelocity);
     }
-
-
 }
