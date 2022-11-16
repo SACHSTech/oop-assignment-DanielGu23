@@ -21,11 +21,11 @@ public class Main {
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
         // Creating jobs
-        Job Doctor = new Job("Doctor", 150000.00, "Addresses healthcare needs", false);
-        Job Pilot = new Job("Pilot", 70000.00, "Flies planes", true);
-        Job CoPilot = new Job("Co-Pilot", 65000.00, "Helps fly the plane", true);
-        Job Attendent = new Job("Flight Attendent", 40000.00, "Serves passengers", false);
-        Job Jobless = new Job("Jobless", 0.00, "Does nothing", false);
+        Job Doctor = new Job("Doctor", 150000.00, "Addresses healthcare needs");
+        Job Pilot = new Job("Pilot", 70000.00, "Flies planes");
+        Job CoPilot = new Job("Co-Pilot", 65000.00, "Helps fly the plane");
+        Job Attendent = new Job("Flight Attendent", 40000.00, "Serves passengers");
+        Job Jobless = new Job("Jobless", 0.00, "Does nothing");
 
         // Add these jobs to an array list
         jobsList.add(Doctor);
@@ -57,16 +57,17 @@ public class Main {
         System.out.println("How far do you want to travel: ");
         double dblDistance = Double.parseDouble(keyboard.readLine());
         aircraft.scheduleFlight(dblDistance);
-        List<String> commands = Arrays.asList("Add passenger", "Flight", "Status", "Quit");
+        ArrayList<String> commands = new ArrayList<>(Arrays.asList("Add passenger", "Flight", "Status", "Quit"));
         if(aircraft instanceof Helicopter){
-            commands.add("Set altitude");
+            commands.add("Set altitude\t");
         }
         boolean isQuit = false;
-        while(!isQuit){
+        while(!isQuit && !(aircraft.getDistance()==0)){
             System.out.println("Choose your command: ");
             for(int i=0; i<commands.size(); i++){
-                System.out.print(i + ")"+commands.get(i));
+                System.out.print(i + ")"+commands.get(i) + "\t");
             }
+            System.out.println();
             int intIndex = Integer.parseInt(keyboard.readLine());
             switch(intIndex){
                 case 0: 
@@ -76,13 +77,14 @@ public class Main {
                   flight(aircraft, keyboard);
                   break;
                 case 2:
+                  System.out.print(aircraft.status());
+                  break;
                 case 3:
-
+                  isQuit = true;
+                  System.out.println("Terminating flight");
+                  break;
             }
         };
-
-
-
     }
 
     public static void addPassenger(Aircraft aircraft, BufferedReader keyboard) throws IOException {
@@ -94,13 +96,17 @@ public class Main {
         do{
             System.out.println("What is the passenger's job? ");
             for(int i=0; i<jobsList.size(); i++){
-                System.out.print(i + ")"+jobsList.get(i).getName());
+                System.out.print(i + ")"+jobsList.get(i).getName()+"\t");
             }
+            System.out.println();
             intIndex = Integer.parseInt(keyboard.readLine());
-        } while(intIndex >=0 && intIndex < jobsList.size());
+        } while(intIndex <0 || intIndex >= jobsList.size());
         Job job = jobsList.get(intIndex);
         Passenger passenger = new Passenger(strName, intAge, job);
         aircraft.passengerOnBoard(passenger);
+        if (job.getName().equals("Pilot") || job.getName().equals("Co-Pilot")){
+            aircraft.pilotOnBoard(passenger);
+        }
     }
 
     public static void flight(Aircraft aircraft, BufferedReader keyboard) throws IOException {
@@ -114,29 +120,5 @@ public class Main {
         }
     }
 
-
-    /**
-    * A method that checks if the occupation is on the jobs list
-    *
-    * @param strUserInput - The name of the new job 
-    * @param jobsList - An arraylist that defines the current jobs
-    *
-    * @return isOnList, is the occupation on the list of jobs
-    */	
-    public boolean checkJob(String strUserInput, ArrayList<Job> jobsList){
-        // Intializing instance variables 
-        boolean isOnList = false;
-
-        // For-each loop that iterates through the Jobs arrayList
-        for (Job currentJob : jobsList){
-
-            // If the user input equals to an object in the current jobs list
-            if (strUserInput.equals(currentJob.getName())) {
-                isOnList = true;
-            }
-        }
-        // return whether the job is on the list
-        return isOnList;          
-    }
         
 }

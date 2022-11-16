@@ -43,6 +43,9 @@ public abstract class Aircraft {
     */	
     public void pilotOnBoard(Passenger pilot){
         if (this.pilot == null) {
+            if(!pilot.getJob().getName().equals("Pilot") && !pilot.getJob().getName().equals("Co-Pilot")){
+                System.out.println("This passenger is not a pilot!");                
+            }
             this.pilot = pilot;
         }
         else {

@@ -12,7 +12,6 @@ public class Job {
     private String strName;
     private double dblSalary;
     private String strPurpose;
-    private boolean isNecessary;
 
     /**
     * Constructor - creates new instance of a job object
@@ -20,14 +19,12 @@ public class Job {
     * @param strName - the name of the job
     * @param dblSalary - the yearly salary of the job
     * @param strPurpose - determines what the purpose of the job is
-    * @param isNecessary - is the job necessary on an airplane
     */	
-    public Job (String strName, double dblSalary, String strPurpose, boolean isNecessary) {
+    public Job (String strName, double dblSalary, String strPurpose) {
     
         this.strName = strName;
         this.dblSalary = dblSalary;
         this.strPurpose = strPurpose;
-        this.isNecessary = isNecessary;
 	}
 
     /**
@@ -55,14 +52,5 @@ public class Job {
     */	
     public String getPurpose() {
         return this.strPurpose;
-    }
-
-    /**
-    * Returns whether the job is necessary on an airplane
-    *
-    * @return isNecessary, is the job necessary
-    */	
-    public boolean getNecessity() {
-        return this.isNecessary;
     }
 }
