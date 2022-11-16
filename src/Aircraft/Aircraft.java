@@ -19,16 +19,28 @@ public abstract class Aircraft {
     /**
     * Constructor - creates new instance of an Airplane object
     *
-    * @param intCapacity - the capacity of the aircraft
+    * @param intCapacity - the maximum number of passengers in the aircraft
     */	
     public Aircraft(int intCapacity){
         this.intCapacity = intCapacity;
     }
 
+    
+    /**
+    * Setter method that sets the amount of distance needed to travel
+    *
+    * @return dblDistance, the distance of the flight
+    */	
     public void scheduleFlight(double dblDistance){
         this.dblDistance = dblDistance;
     }
 
+    
+    /**
+    * Setter method that assigns a pilot the aircraft
+    *
+    * @return dblDistance, the distance remaining of the flight
+    */	
     public void pilotOnBoard(Passenger pilot){
         if (this.pilot == null) {
             this.pilot = pilot;
@@ -47,12 +59,18 @@ public abstract class Aircraft {
         }
     }
 
+  
+    /**
+    * Returns the distance remaining
+    *
+    * @return dblDistance, the distance remaining of the flight
+    */	
     public double flight(int intHours) {
         if (this.pilot == null) {
             System.out.println("Please assign a pilot first!");
             return this.dblDistance;   
         }
-        if (getVelocity() * intHours > this.dblDistance){
+        if (getVelocity() * intHours >= this.dblDistance){
             this.dblDistance = 0;
         }else{
             this.dblDistance -= getVelocity() * intHours;
@@ -63,12 +81,17 @@ public abstract class Aircraft {
     /**
     * Returns the distance
     *
-    * @return dblDistance, the distance needed to travel
+    * @return dblDistance, the distance of the flight
     */	
     public double getDistance() {
         return this.dblDistance;
     }
 
+    /**
+    * Returns the maximum capacity of the aircraft
+    *
+    * @return intCapacity, the maximum number of passengers
+    */	
     public int getCapacity(){
         return this.intCapacity;
     };
