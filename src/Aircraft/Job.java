@@ -1,8 +1,5 @@
 package Aircraft;
 
-import java.io.*;
-import java.util.*;
-
 /**
 * Job class file
 * @author: D. Gu

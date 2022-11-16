@@ -1,33 +1,63 @@
 package Aircraft;
 
+import java.util.*;
+
 /**
 * Aircraft class file
 * @author: D. Gu
 * 
 */
 
-public class Aircraft {
+public abstract class Aircraft {
     
     // Instance variables
-    private double dblDistance;
-    public static int intPassengers;
-    private String strStartLocation;
-    private String strAirlineName;
-    private int intVelocity;
+    private double dblDistance = 0;
+    private Passenger pilot = null;
+    private int intCapacity;
+    private ArrayList<Passenger> arrPassengers = new ArrayList<>();
 
     /**
     * Constructor - creates new instance of an Airplane object
     *
-    * @param dblDistance - the distance of the flight
-    * @param strStartLocation - the name of the starting location
-    * @param strAirlineName - the name of the airline
-    * @param intVelocity - the velocity at which the plane will be flying at
+    * @param intCapacity - the capacity of the aircraft
     */	
-    public Aircraft(double dblDistance, String strStartLocation, String strAirlineName, int intVelocity){
+    public Aircraft(int intCapacity){
+        this.intCapacity = intCapacity;
+    }
+
+    public void scheduleFlight(double dblDistance){
         this.dblDistance = dblDistance;
-        this.strStartLocation = strStartLocation;
-        this.strAirlineName = strAirlineName;
-        this.intVelocity = intVelocity;
+    }
+
+    public void pilotOnBoard(Passenger pilot){
+        if (this.pilot == null) {
+            this.pilot = pilot;
+        }
+        else {
+            System.out.println("Pilot is already on board");
+        }        
+    }
+
+    public void passengerOnBoard(Passenger passenger){
+        if (this.arrPassengers.size() < getCapacity() ) {
+            this.arrPassengers.add(passenger);
+        }
+        else {
+            System.out.println("Maximum passenger capacity reached");
+        }
+    }
+
+    public double flight(int intHours) {
+        if (this.pilot == null) {
+            System.out.println("Please assign a pilot first!");
+            return this.dblDistance;   
+        }
+        if (getVelocity() * intHours > this.dblDistance){
+            this.dblDistance = 0;
+        }else{
+            this.dblDistance -= getVelocity() * intHours;
+        }
+        return this.dblDistance;
     }
 
     /**
@@ -39,32 +69,16 @@ public class Aircraft {
         return this.dblDistance;
     }
 
+    public int getCapacity(){
+        return this.intCapacity;
+    };
+    
     /**
-    * Returns the starting position
-    *
-    * @return strStartLocation, the starting location
-    */	
-    public String getStartLocation() {
-        return this.strStartLocation;
-    }
-
-    /**
-    * Returns the airline's name
-    *
-    * @return strAirlineName, the name of the airline
-    */	
-    public String getAirlineName() {
-        return this.strAirlineName;
-    }
-
-    /**
-    * Returns the velocity of the plane
+    * Returns the velocity of the aircraft
+    * Abstract method to be implemented by inherited classes
     *
     * @return intVelocity, the velocity of the plane
     */	
-    public int getVelocity() {
-        return this.intVelocity;
-    }
-
+    public abstract double getVelocity();
 
 }

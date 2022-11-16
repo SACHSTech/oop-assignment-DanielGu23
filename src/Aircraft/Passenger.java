@@ -1,8 +1,5 @@
 package Aircraft;
 
-import java.io.*;
-import java.util.*;
-
 /**
 * Passenger class file
 * @author: D. Gu
@@ -25,13 +22,11 @@ public class Passenger {
     * @param hasFlightExperience - determines if the passenger has former flight experience
     * @param Job - The job of the passenger on the flight (aggregation)
     */	
-    public Passenger (String strName, int intAge, boolean hasFlightExperience, Job Job) {
-    
+    public Passenger (String strName, int intAge, boolean hasFlightExperience, Job Job) {    
         this.strName = strName;
         this.intAge = intAge;
         this.hasFlightExperience = hasFlightExperience;
         this.Job = Job;
-        Aircraft.intPassengers++;
 	}
 
    /**
