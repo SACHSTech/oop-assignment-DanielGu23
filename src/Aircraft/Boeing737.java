@@ -34,4 +34,8 @@ public class Boeing737 extends Aircraft {
     public double getVelocity() {
         return this.dblVelocity;
     }
+
+    public String status() {
+        return "This is " + strAirlineName + "Boeing 737\n" + "Total passengers "+ getPassengers().size();
+    }
 }

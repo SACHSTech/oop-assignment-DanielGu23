@@ -88,6 +88,15 @@ public abstract class Aircraft {
     }
 
     /**
+    * Returns the passengers
+    *
+    * @return arrPassengers, the passengers 
+    */	
+    public ArrayList<Passenger> getPassengers() {
+        return this.arrPassengers;
+    }    
+
+    /**
     * Returns the maximum capacity of the aircraft
     *
     * @return intCapacity, the maximum number of passengers
@@ -104,4 +113,5 @@ public abstract class Aircraft {
     */	
     public abstract double getVelocity();
 
+    public abstract String status();    
 }
