@@ -11,6 +11,7 @@ import java.util.*;
 
 public class Main {
 
+    static ArrayList<Job> jobsList = new ArrayList<>();
     public static void main(String[] args) throws IOException {
         
         // Method variables
@@ -27,7 +28,6 @@ public class Main {
         Job Jobless = new Job("Jobless", 0.00, "Does nothing", false);
 
         // Add these jobs to an array list
-        ArrayList<Job> jobsList = new ArrayList<>();
         jobsList.add(Doctor);
         jobsList.add(Pilot);
         jobsList.add(Attendent);
@@ -67,14 +67,22 @@ public class Main {
         System.out.println(Aircraft.intPassengers);
     }
 
-    public static void addPassenger(BufferedReader keyboard) throws IOException {
+    public static void addPassenger(Aircraft aircraft, BufferedReader keyboard) throws IOException {
         System.out.println("What is the passenger's name? ");
         String strName = keyboard.readLine();
         System.out.println("What is the passenger's age? ");
-        int intAge = int.parseInt(keyboard.readLine());
-        System.out.println("What is the passenger's job? ");
-        String strJob = keyboard.readLine();
-
+        int intAge = Integer.parseInt(keyboard.readLine());
+        int intIndex = -1;        
+        do{
+            System.out.println("What is the passenger's job? ");
+            for(int i=0; i<jobsList.size(); i++){
+                System.out.print(i + ")"+jobsList.get(i).getName());
+            }
+            intIndex = Integer.parseInt(keyboard.readLine());
+        } while(intIndex >=0 && intIndex < jobsList.size());
+        Job job = jobsList.get(intIndex);
+        Passenger passenger = new Passenger(strName, intAge, job);
+        aircraft.passengerOnBoard(passenger);
     }
 
 

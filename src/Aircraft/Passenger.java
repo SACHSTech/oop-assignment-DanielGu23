@@ -20,7 +20,7 @@ public class Passenger {
     * @param intAge - the age of the passenger
     * @param Job - The job of the passenger on the flight (aggregation)
     */	
-    public Passenger (String strName, int intAge, boolean hasFlightExperience, Job Job) {    
+    public Passenger (String strName, int intAge, Job Job) {    
         this.strName = strName;
         this.intAge = intAge;
         this.Job = Job;
