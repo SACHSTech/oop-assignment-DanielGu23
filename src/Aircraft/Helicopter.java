@@ -49,4 +49,10 @@ public class Helicopter extends Aircraft{
             return this.dblLowVelocity;
         }
     }
+
+    public String status() {
+        String result = "This is a Helicopter\n" + "Total passengers on board: "+ getPassengers().size();
+        result += "\n velocity: " + getVelocity() + "\n altitude: " + getAltitude() + "\n distance remaining: " + getDistance() + "\n";
+        return result;
+    }    
 }

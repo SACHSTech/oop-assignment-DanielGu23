@@ -36,6 +36,8 @@ public class Boeing737 extends Aircraft {
     }
 
     public String status() {
-        return "This is " + strAirlineName + "Boeing 737\n" + "Total passengers "+ getPassengers().size();
+        String result = "This is " + strAirlineName + "Boeing 737\n" + "Total passengers on board: "+ getPassengers().size();
+        result += "\n velocity: " + getVelocity() + "\n distance remaining: " + getDistance() + "\n";
+        return result;
     }
 }
