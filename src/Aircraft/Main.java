@@ -36,7 +36,7 @@ public class Main {
 
         // Starting the simulation
         System.out.println("Welcome to plane flight simulator");
-        
+        Aircraft aircraft = null;
         // Choose which airplane the user wants
         while (isAnOption == false){
             System.out.print("Please choose the type of plane you want: (A) Helicopter or (B) Boeing 737 - " );
@@ -44,16 +44,20 @@ public class Main {
             
             if (strChoice.equals("a") || strChoice.equals("A")){
                 System.out.println("You have chosen the Helicopter");
+                aircraft = new Helicopter(500.00, 200.00, 0);
                 isAnOption = true;
             }
             else if (strChoice.equals("b") || strChoice.equals("B")){
                 System.out.println("You have chosen the Boeing737");
+                aircraft = new Boeing737("Air Canada", 1000.00);
                 isAnOption = true;
             }
         }
         System.out.println();
         System.out.println("How far do you want to travel: ");
-        
+        double dblDistance = Double.parseDouble(keyboard.readLine());
+        aircraft.scheduleFlight(dblDistance);
+
 
         // Creating passengers
         Passenger Joe = new Passenger("Joe", 10, false, Doctor);
@@ -61,6 +65,16 @@ public class Main {
 
         System.out.println(Joe.getJob().getName());
         System.out.println(Aircraft.intPassengers);
+    }
+
+    public static void addPassenger(BufferedReader keyboard) throws IOException {
+        System.out.println("What is the passenger's name? ");
+        String strName = keyboard.readLine();
+        System.out.println("What is the passenger's age? ");
+        int intAge = int.parseInt(keyboard.readLine());
+        System.out.println("What is the passenger's job? ");
+        String strJob = keyboard.readLine();
+
     }
 
 
