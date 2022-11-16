@@ -57,14 +57,32 @@ public class Main {
         System.out.println("How far do you want to travel: ");
         double dblDistance = Double.parseDouble(keyboard.readLine());
         aircraft.scheduleFlight(dblDistance);
+        List<String> commands = Arrays.asList("Add passenger", "Flight", "Status", "Quit");
+        if(aircraft instanceof Helicopter){
+            commands.add("Set altitude");
+        }
+        boolean isQuit = false;
+        while(!isQuit){
+            System.out.println("Choose your command: ");
+            for(int i=0; i<commands.size(); i++){
+                System.out.print(i + ")"+commands.get(i));
+            }
+            int intIndex = Integer.parseInt(keyboard.readLine());
+            switch(intIndex){
+                case 0: 
+                  addPassenger(aircraft, keyboard);
+                  break;
+                case 1:
+                  flight(aircraft, keyboard);
+                  break;
+                case 2:
+                case 3:
+
+            }
+        };
 
 
-        // Creating passengers
-        Passenger Joe = new Passenger("Joe", 10, false, Doctor);
-        Joe.setJob(Pilot);
 
-        System.out.println(Joe.getJob().getName());
-        System.out.println(Aircraft.intPassengers);
     }
 
     public static void addPassenger(Aircraft aircraft, BufferedReader keyboard) throws IOException {
@@ -85,6 +103,16 @@ public class Main {
         aircraft.passengerOnBoard(passenger);
     }
 
+    public static void flight(Aircraft aircraft, BufferedReader keyboard) throws IOException {
+        System.out.println("How many hours do you want to fly for? ");
+        int intHours = Integer.parseInt(keyboard.readLine());
+        double dblDistance = aircraft.flight(intHours);
+        if(dblDistance == 0){
+            System.out.println("You have arrived at your destination safely! ");
+        } else {
+            System.out.println("You have " + dblDistance + " km remaining");
+        }
+    }
 
 
     /**
