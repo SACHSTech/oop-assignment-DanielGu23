@@ -17,7 +17,7 @@ public abstract class Aircraft {
     private ArrayList<Passenger> arrPassengers = new ArrayList<>();
 
     /**
-    * Constructor - creates new instance of an Airplane object
+    * Constructor - creates new instance of the Aircraft object
     *
     * @param intCapacity - the maximum number of passengers in the aircraft
     */	
@@ -31,29 +31,36 @@ public abstract class Aircraft {
     *
     * @return dblDistance, the distance of the flight
     */	
-    public void scheduleFlight(double dblDistance){
+    public void setDistance(double dblDistance){
         this.dblDistance = dblDistance;
     }
 
     
     /**
-    * Setter method that assigns a pilot the aircraft
+    * Setter method that assigns a pilot to the aircraft
     *
-    * @return dblDistance, the distance remaining of the flight
+    * @param - name, the passenger
     */	
-    public void pilotOnBoard(Passenger pilot){
+    public void pilotOnBoard(Passenger name){
         if (this.pilot == null) {
-            if(!pilot.getJob().getName().equals("Pilot") && !pilot.getJob().getName().equals("Co-Pilot")){
+            // If the passenger's job is not pilot or co-pilot
+            if (!pilot.getJob().getName().equals("Pilot") && !pilot.getJob().getName().equals("Co-Pilot")){
                 System.out.println("This passenger is not a pilot!");                
             }
-            this.pilot = pilot;
+            this.pilot = name;
         }
         else {
             System.out.println("Pilot is already on board");
         }        
     }
 
+    /**
+    * Setter method that assigns a passenger to the aircraft
+    *
+    * @param - passenger, the passenger 
+    */	
     public void passengerOnBoard(Passenger passenger){
+        // The aircraft checks to see if maximum capacity is reached
         if (this.arrPassengers.size() < getCapacity() ) {
             this.arrPassengers.add(passenger);
         }
@@ -65,17 +72,21 @@ public abstract class Aircraft {
   
     /**
     * Returns the distance remaining
+    * @param - intHours, the number of hours the aircraft has been flying for
     *
     * @return dblDistance, the distance remaining of the flight
     */	
     public double flight(int intHours) {
+        // 
         if (this.pilot == null) {
             System.out.println("Please assign a pilot first!");
             return this.dblDistance;   
         }
+        // Checks if velocity * time is greater than total distance needed
         if (getVelocity() * intHours >= this.dblDistance){
             this.dblDistance = 0;
-        }else{
+        }
+        else{
             this.dblDistance -= getVelocity() * intHours;
         }
         return this.dblDistance;
@@ -112,9 +123,16 @@ public abstract class Aircraft {
     * Returns the velocity of the aircraft
     * Abstract method to be implemented by inherited classes
     *
-    * @return intVelocity, the velocity of the plane
+    * @return intVelocity, the velocity of the aircraft
     */	
     public abstract double getVelocity();
 
+    
+    /**
+    * Returns the status of the aircraft
+    * Abstract method to be implemented by inherited classes
+    *
+    * @return strStatus, the status of the aircraft
+    */	
     public abstract String status();    
 }

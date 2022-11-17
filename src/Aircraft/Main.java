@@ -56,16 +56,16 @@ public class Main {
         System.out.println();
         System.out.println("How far do you want to travel: ");
         double dblDistance = Double.parseDouble(keyboard.readLine());
-        aircraft.scheduleFlight(dblDistance);
+        aircraft.setDistance(dblDistance);
         ArrayList<String> commands = new ArrayList<>(Arrays.asList("Add passenger", "Flight", "Status", "Quit"));
         if(aircraft instanceof Helicopter){
-            commands.add("Set altitude\t");
+            commands.add("Set altitude");
         }
         boolean isQuit = false;
         while(!isQuit && !(aircraft.getDistance()==0)){
             System.out.println("Choose your command: ");
             for(int i=0; i<commands.size(); i++){
-                System.out.print(i + ")"+commands.get(i) + "\t");
+                System.out.print(i + ".)"+commands.get(i) + "   ");
             }
             System.out.println();
             int intIndex = Integer.parseInt(keyboard.readLine());
@@ -96,11 +96,12 @@ public class Main {
         do{
             System.out.println("What is the passenger's job? ");
             for(int i=0; i<jobsList.size(); i++){
-                System.out.print(i + ")"+jobsList.get(i).getName()+"\t");
+                System.out.print(i + ".)"+jobsList.get(i).getName()+ "   ");
             }
             System.out.println();
             intIndex = Integer.parseInt(keyboard.readLine());
-        } while(intIndex <0 || intIndex >= jobsList.size());
+        } while (intIndex <0 || intIndex >= jobsList.size());
+        
         Job job = jobsList.get(intIndex);
         Passenger passenger = new Passenger(strName, intAge, job);
         aircraft.passengerOnBoard(passenger);
