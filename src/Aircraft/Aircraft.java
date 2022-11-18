@@ -39,19 +39,12 @@ public abstract class Aircraft {
     /**
     * Setter method that assigns a pilot to the aircraft
     *
-    * @param - name, the passenger
+    * @param - pilot, the passenger
     */	
-    public void pilotOnBoard(Passenger name){
+    public void addPilot(Passenger pilot){
         if (this.pilot == null) {
-            // If the passenger's job is not pilot or co-pilot
-            if (!pilot.getJob().getName().equals("Pilot") && !pilot.getJob().getName().equals("Co-Pilot")){
-                System.out.println("This passenger is not a pilot!");                
-            }
-            this.pilot = name;
-        }
-        else {
-            System.out.println("Pilot is already on board");
-        }        
+            this.pilot = pilot;
+        }    
     }
 
     /**
@@ -59,9 +52,9 @@ public abstract class Aircraft {
     *
     * @param - passenger, the passenger 
     */	
-    public void passengerOnBoard(Passenger passenger){
+    public void addPassenger(Passenger passenger){
         // The aircraft checks to see if maximum capacity is reached
-        if (this.arrPassengers.size() < getCapacity() ) {
+        if (this.arrPassengers.size() < getCapacity()) {
             this.arrPassengers.add(passenger);
         }
         else {

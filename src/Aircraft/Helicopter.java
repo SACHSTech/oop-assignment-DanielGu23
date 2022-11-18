@@ -70,7 +70,7 @@ public class Helicopter extends Aircraft{
     */	
     public String status() {
         String result = "This is a Helicopter\n" + "Total passengers on board: "+ getPassengers().size();
-        result += "\n velocity: " + getVelocity() + "\n altitude: " + getAltitude() + "\n distance remaining: " + getDistance() + "\n";
+        result += "\n velocity: " + getVelocity() + " km/hr \n altitude: " + getAltitude() + " km above sea level \n distance remaining: " + getDistance() + " km \n";
         return result;
     }    
 }

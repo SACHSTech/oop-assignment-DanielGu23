@@ -54,14 +54,4 @@ public class Passenger {
     }
 
 
-   /**
-    * Setter method that allows the user to add a job to a passenger
-    *
-    * @param strJob - the job 
-    */	
-    public void setJob(Job Job) {
-        this.Job = Job;
-    }
-
-
 }
